@@ -1,0 +1,20 @@
+<header>
+  <div class="nav-firsthalf">
+    @for (item of navItems; track item.title) {
+    <nav>
+      <app-button [routerLink]="item.navigateTo">
+        <app-typography [size]="6" [font]="'mono'" [weight]="'bold'">
+          {{ item.title }}
+        </app-typography>
+      </app-button>
+    </nav>
+    }
+  </div>
+  <nav>
+    <app-button [routerLink]="contactItem.navigateTo">
+      <app-typography [size]="6" [font]="'mono'" [weight]="'bold'">
+        {{ contactItem.title }}
+      </app-typography>
+    </app-button>
+  </nav>
+</header>

@@ -1,0 +1,8 @@
+<div
+  [class]="computedClass"
+  [ngSwitch]="tag"
+  [attr.role]="tag === 'h1' || tag === 'h2' || tag === 'h3' ? 'heading' : tag"
+  [attr.aria-level]="['h1', 'h2', 'h3'].includes(tag) ? tag.slice(1) : null"
+>
+  <ng-content></ng-content>
+</div>

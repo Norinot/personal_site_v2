@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 48px;
+  max-width: 1280px;
+}
+
+.hero-image {
+  max-width: 512px;
+  max-height: 512px;
+
+  border-radius: 18px;
+}
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.description {
+  text-shadow: 3px 3px 2px rgba(204, 0, 206, 0.32);
+}

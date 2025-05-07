@@ -1,0 +1,24 @@
+header {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border: 1px dashed var(--p-300);
+  border-radius: 12px;
+
+  max-width: 1360px;
+
+  padding: 12px;
+  margin-bottom: 8rem;
+}
+
+.nav-firsthalf {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+app-button:hover {
+  text-shadow: 4px 4px 2px var(--p-50);
+}

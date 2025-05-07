@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("assets/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("assets/fonts/VT323/VT323-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --p-10: #f4ecfc;
+  --p-20: #e3d6f9;
+  --p-50: #ceb3f2;
+  --p-100: #b998f6;
+  --p-200: #9d85f2;
+  --p-300: #7e5ef2;
+  --p-400: #6833f5;
+  --p-500: #5005f2;
+  --p-600: #3e04ba;
+  --p-700: #2e0389;
+  --p-800: #182e59;
+  --p-900: #0e1b33;
+
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Roboto", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-vt323: "VT323", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--p-900);
+  color: var(--p-50);
+  margin: 5%;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+}
+
+blockquote {
+  font-family: var(--font-serif);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}

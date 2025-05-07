@@ -1,0 +1,100 @@
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-vt323 {
+  font-family: var(--font-vt323);
+}
+
+.size-1 {
+  font-size: 0.75rem;
+}
+.size-2 {
+  font-size: 0.875rem;
+}
+.size-3 {
+  font-size: 1rem;
+}
+.size-4 {
+  font-size: 1.125rem;
+}
+.size-5 {
+  font-size: 1.25rem;
+}
+.size-6 {
+  font-size: 1.5rem;
+}
+.size-7 {
+  font-size: 1.75rem;
+}
+.size-8 {
+  font-size: 2rem;
+}
+.size-9 {
+  font-size: 2.25rem;
+}
+
+.size-10 {
+  font-size: 4rem;
+}
+
+.thin {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.bold {
+  font-weight: 700;
+}
+
+//Anything that is custom goes below this line
+
+.about-me-styles {
+  transition: all 0.5s;
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+}
+
+.about-me-styles:hover {
+  -webkit-text-stroke: 4px var(--p-50);
+  font-variation-settings: "wght" 900, "ital" 1;
+  font-size: 6rem;
+  color: transparent;
+  text-shadow: 10px 10px 0px var(--p-200), 15px 15px 0px var(--p-400),
+    20px 20px 0px var(--p-500), 25px 25px 0px var(--p-700),
+    45px 45px 10px var(--p-900);
+  cursor: pointer;
+}
+
+.job-title-styles {
+  background: var(--p-50);
+  background: linear-gradient(
+    to right,
+    var(--p-50) 0%,
+    var(--p-300) 33%,
+    var(--p-400) 66%,
+    var(--p-500) 88%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.name {
+  color: var(--p-10);
+}
