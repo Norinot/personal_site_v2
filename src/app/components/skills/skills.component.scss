@@ -1,0 +1,94 @@
+:host {
+  --red: rgb(179, 49, 49);
+  --blue: rgb(70, 77, 177);
+  --green: rgb(144, 228, 123);
+}
+
+.root {
+  margin-top: 2.5%;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  justify-content: center;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  justify-items: center;
+  max-width: 400px;
+
+  align-self: flex-end;
+}
+
+.icon-wrapper {
+  width: min-content;
+  height: min-content;
+  transition: all 0.4s;
+}
+
+.expert.hovered {
+  filter: drop-shadow(0 0 10px var(--red)) drop-shadow(0 0 20px var(--red));
+}
+
+.high.hovered {
+  filter: drop-shadow(0 0 10px var(--blue)) drop-shadow(0 0 20px var(--blue));
+}
+
+.medium.hovered {
+  filter: drop-shadow(0 0 10px var(--green)) drop-shadow(0 0 20px var(--green));
+}
+
+.expert:hover {
+  filter: drop-shadow(0 0 10px var(--red)) drop-shadow(0 0 20px var(--red));
+}
+
+.high:hover {
+  filter: drop-shadow(0 0 10px var(--blue)) drop-shadow(0 0 20px var(--blue));
+}
+
+.medium:hover {
+  filter: drop-shadow(0 0 10px var(--green)) drop-shadow(0 0 20px var(--green));
+}
+
+.tooltip-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.base-tooltip {
+  transition: all 0.3s;
+  font-size: smaller;
+  width: 100px;
+  padding: 6px;
+  text-align: center;
+  border-radius: 6px;
+  color: var(--p-10);
+  cursor: pointer;
+}
+
+.expert-tooltip {
+  background-color: var(--red);
+}
+.expert-tooltip:hover {
+  filter: drop-shadow(0 0 10px var(--red));
+}
+
+.high-tooltip {
+  background-color: var(--blue);
+}
+.high-tooltip:hover {
+  filter: drop-shadow(0 0 10px var(--blue));
+}
+
+.medium-tooltip {
+  background-color: var(--green);
+  color: var(--p-900);
+}
+.medium-tooltip:hover {
+  filter: drop-shadow(0 0 10px var(--green));
+}

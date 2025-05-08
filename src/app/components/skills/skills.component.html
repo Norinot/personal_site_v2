@@ -1,3 +1,49 @@
-<div>
-  <app-icon name="react"></app-icon>
+<div class="root">
+  <div>
+    <div class="tooltip-wrapper">
+      <div
+        (mouseleave)="unFocusElements()"
+        (mouseenter)="focusElements('expert')"
+        class="base-tooltip expert-tooltip"
+      >
+        <app-typography
+          [size]="4"
+          font="heading"
+          [customClass]="'skillHighlighter'"
+          >Expert</app-typography
+        >
+      </div>
+      <div
+        (mouseleave)="unFocusElements()"
+        (mouseenter)="focusElements('high')"
+        class="base-tooltip high-tooltip"
+      >
+        <app-typography
+          [size]="4"
+          font="heading"
+          [customClass]="'skillHighlighter'"
+          >Advanced</app-typography
+        >
+      </div>
+      <div
+        (mouseleave)="unFocusElements()"
+        (mouseenter)="focusElements('medium')"
+        class="base-tooltip medium-tooltip"
+      >
+        <app-typography
+          [size]="4"
+          font="heading"
+          [customClass]="'skillHighlighter'"
+          >Intermediate</app-typography
+        >
+      </div>
+    </div>
+  </div>
+  <div class="skills-container">
+    @for (item of skills; track $index) {
+    <div class="icon-wrapper" [class]="item.level" [ngClass]="getClass(item)">
+      <app-icon [name]="item.icon" size="82px"></app-icon>
+    </div>
+    }
+  </div>
 </div>
