@@ -43,15 +43,14 @@
   font-size: 2rem;
 }
 .size-9 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
-
 .size-10 {
   font-size: 4rem;
 }
 
 .thin {
-  font-weight: 300;
+  font-weight: 100;
 }
 .regular {
   font-weight: 400;
@@ -63,42 +62,27 @@
   font-weight: 700;
 }
 
-//Anything that is custom goes below this line
+.primary {
+  color: var(--color-text-primary);
+}
+.secondary {
+  color: var(--color-text-secondary);
+}
+.accent {
+  color: var(--color-text-accent);
+}
 
-.about-me-styles {
+.fancyFont {
   transition: all 0.5s;
   font-variation-settings: "wght" 100, "ital" 0;
   text-shadow: none;
 }
 
-.about-me-styles:hover {
-  -webkit-text-stroke: 4px var(--p-50);
-  font-variation-settings: "wght" 900, "ital" 1;
-  font-size: 5.8rem;
+.fancyFont:hover {
+  transition: all 0.5s;
+  -webkit-text-stroke: 4px var(--color-text-primary);
   color: transparent;
-  text-shadow: 10px 10px 0px var(--p-200), 15px 15px 0px var(--p-400),
-    20px 20px 0px var(--p-500), 25px 25px 0px var(--p-700),
-    45px 45px 10px var(--p-900);
-  cursor: pointer;
-}
-
-.job-title-styles {
-  background: var(--p-50);
-  background: linear-gradient(
-    to right,
-    var(--p-50) 0%,
-    var(--p-300) 33%,
-    var(--p-400) 66%,
-    var(--p-500) 88%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.name {
-  color: var(--p-10);
-}
-
-.skillHighlighter {
-  letter-spacing: 2px;
+  text-shadow: 5px 5px 0px var(--color-text-accent),
+    10px 10px 0px var(--color-text-secondary), 15px 15px 0px #f1ee4b,
+    20px 20px 0px #5eff36,
 }

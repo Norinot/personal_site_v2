@@ -7,10 +7,10 @@ header {
   border: 1px dashed var(--p-300);
   border-radius: 12px;
 
-  max-width: 1360px;
+  max-width: 1100px;
 
   padding: 12px;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
 }
 
 .nav-firsthalf {
@@ -20,5 +20,5 @@ header {
 }
 
 app-button:hover {
-  text-shadow: 4px 4px 2px var(--p-50);
+  text-shadow: 4px 4px 2px var(--color-primary-hover);
 }

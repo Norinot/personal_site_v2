@@ -14,8 +14,10 @@ export class TypographyComponent {
   @Input() tag: string = 'p';
   @Input() customClass: string = '';
   @Input() weight: 'thin' | 'regular' | 'medium' | 'bold' = 'regular';
+  @Input() colour: 'primary' | 'secondary' | 'accnet' = 'primary';
+  @Input() letterSpacing: string = '0%';
 
   get computedClass(): string {
-    return `font-${this.font} size-${this.size} ${this.weight} ${this.customClass}`;
+    return `font-${this.font} size-${this.size} ${this.weight} ${this.customClass} ${this.colour} `;
   }
 }

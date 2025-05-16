@@ -9,7 +9,8 @@
   font-family: "JetBrains Mono";
   src: url("assets/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf")
     format("truetype");
-  font-weight: 400;
+  font-optical-sizing: auto;
+  font-weight: unset;
   font-style: normal;
 }
 
@@ -25,7 +26,6 @@
   font-family: "Roboto";
   src: url("assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf")
     format("truetype");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -37,18 +37,29 @@
 }
 
 :root {
-  --p-10: #f4ecfc;
-  --p-20: #e3d6f9;
-  --p-50: #ceb3f2;
-  --p-100: #b998f6;
-  --p-200: #9d85f2;
-  --p-300: #7e5ef2;
-  --p-400: #6833f5;
-  --p-500: #5005f2;
-  --p-600: #3e04ba;
-  --p-700: #2e0389;
-  --p-800: #182e59;
-  --p-900: #0e1b33;
+  // === Primary Branding Colors ===
+  --color-primary: #d6ff00; // Neon Green – for CTA buttons, highlights
+  --color-primary-hover: #b6ff00; // Slightly darker for hover states
+  --color-accent: #00f0ff; // Neon Cyan – accent lines, icons
+
+  // === Backgrounds ===
+  --color-bg: #0a0a0a; // Main background
+  --color-bg-secondary: #1a1a1a; // Panels and card backgrounds
+  --color-surface: #2e3c4f; // Surfaces or elevated elements
+
+  // === Text ===
+  --color-text-primary: #ffffff; // Main text
+  --color-text-secondary: #c2c2c2; // Subtext or muted labels
+  --color-text-accent: #d6ff00; // Highlighted text or labels
+
+  // === Borders & Lines ===
+  --color-border: #333333;
+  --color-divider: #222222;
+
+  // === States ===
+  --color-success: #66ff66;
+  --color-warning: #ffcc00;
+  --color-error: #ff3366;
 
   --font-heading: "Bebas Neue", sans-serif;
   --font-serif: "Playfair Display", serif;
@@ -61,9 +72,9 @@ body {
   font-family: var(--font-body);
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--p-900);
-  color: var(--p-50);
-  margin: 5%;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  margin: 1%;
 }
 
 h1,
