@@ -1,1 +1,71 @@
-<p>project-card works!</p>
+<div class="card" [class.expanded]="expanded" (click)="toggleExpand()">
+  <!-- Far Left -->
+  <div class="wrapper-first-half">
+    <div class="description-and-header">
+      <!-- Title and period -->
+      <div class="card-title-and-period">
+        <span class="title">{{ project.title }}</span>
+        <span class="period">{{ project.period }}</span>
+      </div>
+      <!-- Description part -->
+      <div class="card-description">
+        @for (part of project.description; track part) {
+        <span [class.highlight]="part.highlight">{{ part.text }}</span>
+        }
+      </div>
+    </div>
+    <!-- Skills -->
+    @if (expanded) {
+    <div class="card-extra">
+      @for (skill of project.skills; track skill) {
+      <div class="skill">{{ skill }}</div>
+      }
+    </div>
+    }
+  </div>
+  <!-- Image part -->
+  <div class="image-container">
+    @if (expanded) {
+    <img [src]="project.imageURL" alt="Project Image" class="project-image" />
+    }
+  </div>
+  <!-- Buttons part -->
+  <div class="nav-button">
+    <app-button
+      variant="fancy"
+      width="50px"
+      height="50px"
+      borderColor="var(--color-error)"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="40px"
+        viewBox="0 -960 960 960"
+        width="40px"
+        fill="#ff3366"
+      >
+        <path
+          d="M446.67-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h166.67v66.67H280q-55.56 0-94.44 38.84-38.89 38.84-38.89 94.33 0 55.49 38.89 94.49 38.88 39 94.44 39h166.67V-280ZM323.33-446.67v-66.66h313.34v66.66H323.33Zm190 166.67v-66.67H680q55.56 0 94.44-38.84 38.89-38.84 38.89-94.33 0-55.49-38.89-94.49-38.88-39-94.44-39H513.33V-680H680q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H513.33Z"
+        />
+      </svg>
+    </app-button>
+    <app-button
+      variant="fancy"
+      width="50px"
+      height="50px"
+      borderColor="var(--color-error)"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="40px"
+        viewBox="0 -960 960 960"
+        width="40px"
+        fill="#ff3366"
+      >
+        <path
+          d="M480.08-326.67q72.25 0 122.75-50.58 50.5-50.57 50.5-122.83 0-72.25-50.58-122.75-50.57-50.5-122.83-50.5-72.25 0-122.75 50.58-50.5 50.57-50.5 122.83 0 72.25 50.58 122.75 50.57 50.5 122.83 50.5Zm-.24-62.66q-46.17 0-78.34-32.33-32.17-32.32-32.17-78.5 0-46.17 32.33-78.34 32.32-32.17 78.5-32.17 46.17 0 78.34 32.33 32.17 32.32 32.17 78.5 0 46.17-32.33 78.34-32.32 32.17-78.5 32.17ZM480-200q-146 0-264.67-82.5Q96.67-365 40-500q56.67-135 175.33-217.5Q334-800 480-800t264.67 82.5Q863.33-635 920-500q-56.67 135-175.33 217.5Q626-200 480-200Zm0-300Zm-.11 233.33q118.44 0 217.61-63.5 99.17-63.5 151.17-169.83-52-106.33-151.06-169.83-99.05-63.5-217.5-63.5-118.44 0-217.61 63.5-99.17 63.5-151.83 169.83 52.66 106.33 151.72 169.83 99.05 63.5 217.5 63.5Z"
+        />
+      </svg>
+    </app-button>
+  </div>
+</div>
