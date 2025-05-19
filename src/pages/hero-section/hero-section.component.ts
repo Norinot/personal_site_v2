@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { TypographyComponent } from '../typography/typography.component';
-import { IconComponent } from "../icon/icon.component";
-import { ButtonComponent } from "../button/button.component";
+import { ButtonComponent } from '../../app/components/button/button.component';
+import { IconComponent } from '../../app/components/icon/icon.component';
+import { TypographyComponent } from '../../app/components/typography/typography.component';
 
 @Component({
   selector: 'app-hero-section',

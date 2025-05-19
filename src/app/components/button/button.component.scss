@@ -19,6 +19,8 @@
 .fancy {
   all: unset;
 
+  cursor: pointer;
+  transition: 0.5s all;
   --input-border-color: #00f0ff;
   --input-bg-color: #0a0a0a;
   --border-width: 0.05em;
@@ -26,7 +28,6 @@
 
   font-size: 24px;
   isolation: isolate;
-
   position: relative;
 
   display: flex;
@@ -60,9 +61,15 @@
 }
 
 .fancy::after {
-  background: var(--input-bg-color);
+  transition: background-position 0.5s ease;
+  background: linear-gradient(
+    to right,
+    var(--input-border-color),
+    var(--input-bg-color) 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
   z-index: -1;
-
   clip-path: polygon(
     var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
     calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
@@ -73,4 +80,12 @@
       calc(100% - var(--border-width)),
     calc(var(--border-width)) calc(100% - var(--border-width))
   );
+}
+
+.fancy:hover::after {
+  background-position: left bottom;
+}
+
+.fancy:hover {
+  color: var(--color-text-primary) !important;
 }

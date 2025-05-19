@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { IconComponent } from '../icon/icon.component';
-import { TypographyComponent } from '../typography/typography.component';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "../button/button.component";
+import { Component } from '@angular/core';
+import { ButtonComponent } from '../../app/components/button/button.component';
+import { IconComponent } from '../../app/components/icon/icon.component';
+import { TypographyComponent } from '../../app/components/typography/typography.component';
 
 type Icon =
   | 'angular'
