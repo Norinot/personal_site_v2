@@ -1,3 +1,16 @@
-<button class="base-button" [routerLink]="routerLink">
+<button
+  [class]="font"
+  [ngClass]="variant"
+  [routerLink]="routerLink"
+  [ngStyle]="{
+    '--input-border-color': borderColor || null,
+    '--input-bg-color': backgroundColor || null,
+    color: textColor || null,
+    width: width || 'auto',
+    height: height || 'auto',
+    fontFamily: 'var(--font-' + font + ')',
+    fontSize: fontSize
+  }"
+>
   <ng-content></ng-content>
 </button>

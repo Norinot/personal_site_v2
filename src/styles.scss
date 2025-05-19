@@ -74,7 +74,11 @@ body {
   box-sizing: border-box;
   background-color: var(--color-bg);
   color: var(--color-text-primary);
-  margin: 1%;
+  margin: 0 226px;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 h1,

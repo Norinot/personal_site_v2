@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { TypographyComponent } from '../typography/typography.component';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from "../button/button.component";
 
 type Icon =
   | 'angular'
@@ -11,7 +12,11 @@ type Icon =
   | 'java'
   | 'javascript'
   | 'react'
-  | 'typescript';
+  | 'typescript'
+  | 'html'
+  | 'unity'
+  | 'github'
+  | 'linkedIn';
 
 type CompetenceLevel = 'expert' | 'high' | 'medium';
 interface ISkillDetails {
@@ -20,7 +25,7 @@ interface ISkillDetails {
 }
 @Component({
   selector: 'app-skills',
-  imports: [IconComponent, TypographyComponent, CommonModule],
+  imports: [IconComponent, TypographyComponent, CommonModule, ButtonComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })
@@ -58,6 +63,14 @@ export class SkillsComponent {
     },
     {
       icon: 'typescript',
+      level: 'expert',
+    },
+    {
+      icon: 'unity',
+      level: 'medium',
+    },
+    {
+      icon: 'html',
       level: 'expert',
     },
   ];

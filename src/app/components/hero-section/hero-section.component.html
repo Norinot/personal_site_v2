@@ -1,28 +1,100 @@
-<img src="/images/portrait_1.png" class="image" />
-<div class="hero-section-primary">
-  <div class="wrapper">
-    <div class="first-half">
-      <app-typography font="heading" [size]="10" letterSpacing="14px" customClass="fancyFont">
-        ABOUT ME
-      </app-typography>
-      <app-typography font="mono" [size]="9" weight="thin">
-        BERNÁTH MÁRK BENCE
-      </app-typography>
-      <app-typography font="mono" [size]="5" colour="secondary">
-        Founder & Software Engineer
+<div class="root">
+  <div class="image-container">
+    <svg
+      class="background-svg"
+      width="390"
+      height="551"
+      viewBox="0 0 390 551"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M389.5 0.5V550.5H138.134L1.45117 413.583V112.903L140.007 0.5H389.5Z"
+        stroke="white"
+      />
+      <path
+        d="M127.935 0.5L64.8467 50.7295L64.8379 50.7373L1.44141 103.735L0.504883 0.5H127.935Z"
+        stroke="white"
+      />
+      <path
+        d="M301.037 122.781V239.347H117.705L251.735 200.894L252.004 200.816L252.079 200.548L281.755 95.1465L301.037 122.781Z"
+        stroke="white"
+      />
+      <path
+        d="M245.014 193.533L200.078 208.039L114.7 234.291L122.711 128.852L191.834 84.2188L280.866 77.6016L245.014 193.533Z"
+        stroke="white"
+      />
+      <path
+        d="M7.72168 436.281L7.73633 436.296L41.5049 469.247L41.5039 469.248L41.5137 469.256L129.042 550.499H99.0996L1.45117 473.508V429.633L7.72168 436.281Z"
+        stroke="white"
+      />
+      <path
+        d="M30.1338 509.261V509.26L82.7344 550.499H1.45117V487.191L30.1338 509.261Z"
+        stroke="white"
+      />
+    </svg>
+
+    <img src="/images/portrait_1.png" class="image" />
+  </div>
+  <div class="primary-container-right">
+    <div class="hero-section-primary">
+      <div class="first-half">
+        <app-typography
+          font="heading"
+          [size]="10"
+          letterSpacing="14px"
+          customClass="fancyFont"
+        >
+          ABOUT ME
+        </app-typography>
+        <app-typography font="mono" [size]="9" weight="thin">
+          BERNÁTH MÁRK BENCE
+        </app-typography>
+        <app-typography font="mono" [size]="5" colour="secondary">
+          Founder & Software Engineer
+        </app-typography>
+        <div class="icon-container">
+          <app-icon [name]="'github'" size="24px"></app-icon>
+          <app-icon [name]="'linkedIn'" size="24px"></app-icon>
+        </div>
+      </div>
+      <app-typography
+        class="description"
+        font="mono"
+        [size]="5"
+        colour="secondary"
+      >
+        I'm a <span class="highlightedText">fullstack developer</span> with 3
+        years of experience building web applications at Deutsche Telekom and
+        beyond. I specialize in frontend technologies like
+        <span class="highlightedText">Angular</span>,
+        <span class="highlightedText">React</span>, and
+        <span class="highlightedText">Svelte</span>, but I enjoy working across
+        the stack. Outside of my day job, I co-founded
+        <span class="highlightedText italicText">Code_Craftsmen</span>, a small
+        team delivering custom-built software solutions.
       </app-typography>
     </div>
-    <app-typography
-      class="description"
-      font="mono"
-      [size]="5"
-      colour="secondary"
-    >
-      I'm a fullstack developer with 3 years of experience building web
-      applications at Deutsche Telekom and beyond. I specialize in frontend
-      technologies like Angular, React, and Svelte, but I enjoy working across
-      the stack. Outside of my day job, I co-founded Code_Craftsmen, a small
-      team delivering custom-built software solutions.
-    </app-typography>
+    <div class="button-wrapper">
+      <app-button
+        width="180px"
+        height="60px"
+        variant="fancy"
+        backgroundColor="var(--color-surface)"
+        textColor="var(--color-warning)"
+        borderColor="var(--color-warning)"
+        >CONTACT ME
+      </app-button>
+      <app-button
+        width="224px"
+        height="60px"
+        variant="fancy"
+        font="vt323"
+        borderColor="var(--color-text-accent)"
+        textColor="var(--color-text-accent)"
+        backgroundColor="var(--color-surface)"
+        >VIEW PROJECTS</app-button
+      >
+    </div>
   </div>
 </div>

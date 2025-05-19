@@ -1,5 +1,34 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  margin-top: 142px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* lets mouse events pass through if needed */
+}
+
 .image {
-  width: 300px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .first-half {
@@ -7,29 +36,58 @@
   max-height: 248px;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 34px;
-}
-
 .description {
   max-width: 474px;
   max-height: 248px;
 }
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.highlightedText {
+  color: var(--color-text-accent);
+}
+
+.italicText {
+  font-style: italic;
+}
+
+.primary-container-right {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
 // Container
 .hero-section-primary {
   --border-width: 0.2em;
   --edge-size: 3.5em;
 
-  float: right;
-  position: relative;
-  isolation: isolate;
+  float: right; //Not important for you.
+  isolation: isolate; //Could be important, since we play around with Z-Indexes, and this way, we scope everything into this box. Handy!
 
-  padding: 0.5em 4em;
+  position: relative; //Key property.
+
+  //The next 3 is purely cosmetic change, isn't needed.
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+
+  padding: 0.5em 4em; //Cosmetic change also
+
+  gap: 30px; //Cosmetic change
+
+  //Important bit, the clip path, this is the first clip path, we are defining our shape with this clip path.
   clip-path: polygon(
     var(--edge-size) 0%,
     100% 0,
@@ -39,10 +97,12 @@
     0% var(--edge-size)
   );
 
+  //Not important, just height and width.
   height: 350px;
   width: 933px;
 }
 
+//Important
 .hero-section-primary::before,
 .hero-section-primary::after {
   content: "";
@@ -50,11 +110,12 @@
   inset: 0;
 }
 
+//Important, this ::before is going to be our border in the end.
 .hero-section-primary::before {
   background: var(--color-border);
   z-index: -2;
 }
-
+//This is our background clip path
 .hero-section-primary::after {
   background: var(--color-bg);
   z-index: -1;
@@ -70,5 +131,3 @@
     calc(var(--border-width)) calc(100% - var(--border-width))
   );
 }
-
-

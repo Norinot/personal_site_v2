@@ -11,6 +11,10 @@ export function provideIcons(iconRegistry: IconRegistryService) {
     iconRegistry.registerIcon('javascript', '/icons/javascript.svg');
     iconRegistry.registerIcon('react', '/icons/react.svg');
     iconRegistry.registerIcon('typescript', '/icons/typescript.svg');
+    iconRegistry.registerIcon('html', '/icons/html.svg');
+    iconRegistry.registerIcon('unity', '/icons/unity.svg');
+    iconRegistry.registerIcon('github', '/icons/github.svg');
+    iconRegistry.registerIcon('linkedIn', '/icons/linkedIn.svg');
   };
 }
 

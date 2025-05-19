@@ -1,4 +1,9 @@
-.base-button {
+:host {
+  width: fit-content;
+  display: flex;
+}
+
+.default {
   all: unset;
   transition: ease-in-out 0.5s;
   border: 1px solid var(--p-50);
@@ -6,7 +11,66 @@
   cursor: pointer;
 }
 
-.base-button:hover {
+.default:hover {
   background-color: var(--p-200);
   color: var(--p-700);
+}
+
+.fancy {
+  all: unset;
+
+  --input-border-color: #00f0ff;
+  --input-bg-color: #0a0a0a;
+  --border-width: 0.05em;
+  --edge-size: 0.5em;
+
+  font-size: 24px;
+  isolation: isolate;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+  clip-path: polygon(
+    var(--edge-size) 0%,
+    100% 0,
+    100% calc(100% - var(--edge-size)),
+    calc(100% - var(--edge-size)) 100%,
+    0 100%,
+    0% var(--edge-size)
+  );
+
+  height: auto;
+  width: auto;
+}
+
+.fancy::before,
+.fancy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.fancy::before {
+  background: var(--input-border-color);
+  z-index: -2;
+}
+
+.fancy::after {
+  background: var(--input-bg-color);
+  z-index: -1;
+
+  clip-path: polygon(
+    var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
+    calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(var(--border-width)) calc(100% - var(--border-width))
+  );
 }

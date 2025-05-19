@@ -1,48 +1,58 @@
-<div class="root">
+<app-typography letterSpacing="14px" [size]="10" font="heading">SKILLS</app-typography>
+<div class="container">
   <div>
     <div class="tooltip-wrapper">
-      <div
+      <app-button
+        class="expert-tooltip"
+        width="222px"
+        height="60px"
+        variant="fancy"
         (mouseleave)="unFocusElements()"
         (mouseenter)="focusElements('expert')"
-        class="base-tooltip expert-tooltip"
+        borderColor="var(--color-error)"
+        textColor="var(--color-error)"
+        backgroundColor="var(--color-bg-secondary)"
+        font="vt323"
+        fontSize="32px"
       >
-        <app-typography
-          [size]="4"
-          font="heading"
-          [customClass]="'skillHighlighter'"
-          >Expert</app-typography
-        >
-      </div>
-      <div
+        Expert
+      </app-button>
+      <app-button
+        class="high-tooltip"
+        width="222px"
+        height="60px"
+        variant="fancy"
         (mouseleave)="unFocusElements()"
         (mouseenter)="focusElements('high')"
-        class="base-tooltip high-tooltip"
+        borderColor="var(--color-warning)"
+        textColor="var(--color-warning)"
+        backgroundColor="var(--color-bg-secondary)"
+        font="vt323"
+        fontSize="32px"
       >
-        <app-typography
-          [size]="4"
-          font="heading"
-          [customClass]="'skillHighlighter'"
-          >Advanced</app-typography
-        >
-      </div>
-      <div
+        Advanced
+      </app-button>
+      <app-button
+        class="medium-tooltip"
+        width="222px"
+        height="60px"
+        variant="fancy"
         (mouseleave)="unFocusElements()"
         (mouseenter)="focusElements('medium')"
-        class="base-tooltip medium-tooltip"
+        borderColor="var(--color-success)"
+        textColor="var(--color-success)"
+        backgroundColor="var(--color-bg-secondary)"
+        font="vt323"
+        fontSize="32px"
       >
-        <app-typography
-          [size]="4"
-          font="heading"
-          [customClass]="'skillHighlighter'"
-          >Intermediate</app-typography
-        >
-      </div>
+        Advanced
+      </app-button>
     </div>
   </div>
   <div class="skills-container">
     @for (item of skills; track $index) {
     <div class="icon-wrapper" [class]="item.level" [ngClass]="getClass(item)">
-      <app-icon [name]="item.icon" size="82px"></app-icon>
+      <app-icon [name]="item.icon" size="130px"></app-icon>
     </div>
     }
   </div>
