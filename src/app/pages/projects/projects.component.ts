@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TypographyComponent } from '../../app/components/typography/typography.component';
+import { TypographyComponent } from '../../components/typography/typography.component';
 
 @Component({
   selector: 'app-projects',

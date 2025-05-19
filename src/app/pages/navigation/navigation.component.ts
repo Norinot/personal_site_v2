@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../app/components/button/button.component';
-import { TypographyComponent } from '../../app/components/typography/typography.component';
+import { ButtonComponent } from '../../components/button/button.component';
+import { TypographyComponent } from '../../components/typography/typography.component';
 
 interface INavItem {
   title: string;
