@@ -5,6 +5,7 @@ import { TypographyComponent } from '../../components/typography/typography.comp
 interface INavItem {
   title: string;
   navigateTo: string;
+  color?: 'primary' | 'secondary' | 'accent';
 }
 
 // Won't include the Contact me section since it just requies me to create a more complex rendering structure for literally no reason at all.

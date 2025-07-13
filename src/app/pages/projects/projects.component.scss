@@ -1,7 +1,8 @@
 :host {
   display: flex;
+  margin: auto;
   flex-direction: column;
-  gap: 150px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -9,4 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.project-title {
+  align-self: flex-end;
 }

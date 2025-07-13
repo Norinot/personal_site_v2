@@ -42,6 +42,9 @@
   --color-primary-hover: #b6ff00; // Slightly darker for hover states
   --color-accent: #00f0ff; // Neon Cyan – accent lines, icons
 
+  --color-blue: #50aaf9;
+  --color-purple: #c965ff;
+
   // === Backgrounds ===
   --color-bg: #0a0a0a; // Main background
   --color-bg-secondary: #1a1a1a; // Panels and card backgrounds
@@ -72,7 +75,7 @@ body {
   font-family: var(--font-body);
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--color-bg);
+  background-color: var(--color-border);
   color: var(--color-text-primary);
   margin: 0 226px;
 }

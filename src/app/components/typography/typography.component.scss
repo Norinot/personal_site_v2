@@ -72,6 +72,22 @@
   color: var(--color-text-accent);
 }
 
+.purple {
+  color: var(--color-purple);
+}
+
+.blue {
+  color: var(--color-blue);
+}
+
+.green {
+  color: var(--color-success);
+}
+
+.yellow {
+  color: var(--color-warning);
+}
+
 .fancyFont {
   transition: all 0.5s;
   font-variation-settings: "wght" 100, "ital" 0;
@@ -84,5 +100,5 @@
   color: transparent;
   text-shadow: 5px 5px 0px var(--color-text-accent),
     10px 10px 0px var(--color-text-secondary), 15px 15px 0px #f1ee4b,
-    20px 20px 0px #5eff36,
+    20px 20px 0px #5eff36;
 }

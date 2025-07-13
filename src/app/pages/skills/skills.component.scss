@@ -1,16 +1,20 @@
 :host {
-  margin-top: 2.5%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+  gap: 20px;
   justify-content: center;
+}
+
+.skills-title {
+  align-self: flex-end;
 }
 
 .container {
   display: flex;
   align-items: flex-start;
-  gap: 100px;
+  gap: 80px;
 }
 
 .skills-container {
@@ -110,7 +114,7 @@
 }
 
 .tooltip-wrapper::after {
-  background: var(--input-bg-color);
+  background: var(--color-border);
   z-index: -1;
 
   clip-path: polygon(

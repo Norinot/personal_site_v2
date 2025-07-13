@@ -15,6 +15,10 @@ export function provideIcons(iconRegistry: IconRegistryService) {
     iconRegistry.registerIcon('unity', '/icons/unity.svg');
     iconRegistry.registerIcon('github', '/icons/github.svg');
     iconRegistry.registerIcon('linkedIn', '/icons/linkedIn.svg');
+    iconRegistry.registerIcon('codeIcon', '/icons/codeIcon.svg');
+    iconRegistry.registerIcon('groupIcon', '/icons/groupIcon.svg');
+    iconRegistry.registerIcon('maintenanceIcon', '/icons/maintenanceIcon.svg');
+    iconRegistry.registerIcon('serverIcon', '/icons/serverIcon.svg');
   };
 }
 

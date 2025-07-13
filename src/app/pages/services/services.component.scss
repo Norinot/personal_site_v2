@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  align-self: flex-end;
+}
+
+.services-container {
+  display: flex;
+  gap: 23px;
+  background-color: var(--color-primary-hover);
+  padding: 20px 44px;
+}
+
+.service-title {
+  width: min-content;
+  align-self: flex-end;
+  height: 82px;
+}
+
+.description {
+  text-align: end;
+  height: 116px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 20px;
+
+  --input-border-color: var(--color-primary-hover);
+  --input-bg-color: var(--color-bg-secondary);
+  --border-width: 0.15em;
+  --edge-size: 2em;
+
+  cursor: pointer;
+  isolation: isolate;
+  position: relative;
+
+  clip-path: polygon(
+    var(--edge-size) 0%,
+    100% 0,
+    100% calc(100% - var(--edge-size)),
+    calc(100% - var(--edge-size)) 100%,
+    0 100%,
+    0% var(--edge-size)
+  );
+  width: 265px;
+}
+
+.service-card::before,
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.service-card::before {
+  background: var(--input-border-color);
+  z-index: -2;
+}
+
+.service-card::after {
+  background-color: var(--input-bg-color);
+
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
+    calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(var(--border-width)) calc(100% - var(--border-width))
+  );
+}

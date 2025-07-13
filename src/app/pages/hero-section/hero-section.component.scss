@@ -1,93 +1,37 @@
+:host {
+  margin: auto;
+}
 .root {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 140px;
-  margin-top: 142px;
-}
-
-.image-container {
-  position: relative;
-  display: inline-block;
-  width: fit-content;
-}
-
-.background-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none; /* lets mouse events pass through if needed */
-}
-
-.image {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.first-half {
-  max-width: 380px;
-  max-height: 248px;
-}
-
-.description {
-  max-width: 474px;
-  max-height: 248px;
-}
-
-.icon-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.highlightedText {
-  color: var(--color-text-accent);
-}
-
-.italicText {
-  font-style: italic;
-}
-
-.primary-container-right {
-  display: flex;
   flex-direction: column;
-  gap: 70px;
+  align-items: center;
+  gap: 15px;
 }
-
-.button-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 14px;
+.title {
+  width: max-content;
+  align-self: flex-end;
 }
-
-// Container
+/* Hero section wrapper - contains both image and clipped box */
 .hero-section-primary {
   --border-width: 0.2em;
   --edge-size: 3.5em;
-
-  float: right; //Not important for you.
-  isolation: isolate; //Could be important, since we play around with Z-Indexes, and this way, we scope everything into this box. Handy!
-
-  position: relative; //Key property.
-
-  //The next 3 is purely cosmetic change, isn't needed.
+  position: relative;
+  float: right;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
+  /* No clipping on the main container */
+}
 
-  padding: 0.5em 4em; //Cosmetic change also
-
-  gap: 30px; //Cosmetic change
-
-  //Important bit, the clip path, this is the first clip path, we are defining our shape with this clip path.
+/* New clipped content area for text only */
+.hero-section-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary-hover);
+  z-index: -2;
+  /* Main shape clip path */
   clip-path: polygon(
     var(--edge-size) 0%,
     100% 0,
@@ -96,30 +40,14 @@
     0 100%,
     0% var(--edge-size)
   );
-
-  //Not important, just height and width.
-  height: 350px;
-  width: 933px;
 }
-
-//Important
-.hero-section-primary::before,
+/* Border pseudo-element */
 .hero-section-primary::after {
   content: "";
   position: absolute;
   inset: 0;
-}
-
-//Important, this ::before is going to be our border in the end.
-.hero-section-primary::before {
   background: var(--color-border);
-  z-index: -2;
-}
-//This is our background clip path
-.hero-section-primary::after {
-  background: var(--color-bg);
   z-index: -1;
-
   clip-path: polygon(
     var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
     calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
@@ -128,6 +56,53 @@
       calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
     calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
       calc(100% - var(--border-width)),
-    calc(var(--border-width)) calc(100% - var(--border-width))
+    var(--border-width) calc(100% - var(--border-width))
   );
+}
+.image-container {
+  position: absolute;
+  left: 3%;
+  bottom: 0.5%;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1;
+  overflow: visible;
+}
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 327px;
+
+  max-height: none;
+}
+.text-wrapper {
+  max-width: 696px;
+  margin-left: 390px;
+  padding: 1.5em 4em 1.5em 0;
+  z-index: 0;
+  position: relative;
+}
+.first-half {
+  margin-bottom: 16px;
+}
+.description {
+  max-width: 474px;
+  max-height: 248px;
+}
+.highlightedText {
+  color: var(--color-text-accent);
+}
+.italicText {
+  font-style: italic;
+}
+.icon-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.button-wrapper {
+  display: flex;
+  align-self: flex-end;
+  gap: 14px;
 }

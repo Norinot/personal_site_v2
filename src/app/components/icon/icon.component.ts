@@ -21,13 +21,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class IconComponent implements OnChanges {
   private iconRegistry = inject(IconRegistryService);
   private sanitizer = inject(DomSanitizer);
-
   icon$: Observable<SafeHtml> = of(this.sanitizer.bypassSecurityTrustHtml(''));
-
+  
   @Input() name: string = '';
   @Input() size: string = '24px';
   @Input() color: string = 'currentColor';
-
+  
   @HostBinding('style.width') get width() {
     return this.size;
   }

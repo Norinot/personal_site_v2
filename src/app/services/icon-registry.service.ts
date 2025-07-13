@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map, catchError, of, shareReplay } from 'rxjs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { IconRegistry } from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class IconRegistryService {
   private readonly http = inject(HttpClient);
   private readonly icons = new Map<string, Observable<SafeHtml>>();
 
-  registerIcon(name: string, url: string): void {
+  registerIcon(name: IconRegistry, url: string): void {
     if (!this.icons.has(name)) {
       const icon$ = this.http.get(url, { responseType: 'text' }).pipe(
         map((svg) =>

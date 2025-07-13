@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { BaseTypographyColors } from '../../types';
 
 @Component({
   selector: 'app-typography',
@@ -14,7 +15,7 @@ export class TypographyComponent {
   @Input() tag: string = 'p';
   @Input() customClass: string = '';
   @Input() weight: 'thin' | 'regular' | 'medium' | 'bold' = 'regular';
-  @Input() colour: 'primary' | 'secondary' | 'accnet' = 'primary';
+  @Input() colour: BaseTypographyColors = 'primary';
   @Input() letterSpacing: string = '0%';
 
   get computedClass(): string {

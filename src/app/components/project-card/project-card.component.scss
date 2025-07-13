@@ -15,7 +15,6 @@
 }
 
 .card-title-and-period {
-  max-width: 770px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -34,7 +33,7 @@
   font-family: var(--font-mono);
   letter-spacing: 4px;
   color: #ffeb9c;
-  font-size: 40px;
+  font-size: 28px;
 }
 
 .period {
@@ -51,6 +50,12 @@
   .highlight {
     color: var(--color-text-accent);
   }
+}
+
+.description-and-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .nav-button {
@@ -76,8 +81,8 @@
 }
 
 .card {
-  --input-border-color: var(--color-border);
-  --input-bg-color: var(--color-bg);
+  --input-border-color: var(--color-primary-hover);
+  --input-bg-color: var(--color-surface);
   --border-width: 0.15em;
   --edge-size: 2em;
 
@@ -125,14 +130,14 @@
 
 .skill {
   transition: 0.5s all;
-  --skill-border-color: var(--color-accent);
-  --skill-bg-color: var(--color-bg);
-  --skill-border-width: 0.06em;
+  --skill-border-color: var(--color-error);
+  --skill-bg-color: var(--color-surface);
+  --skill-border-width: 0.12em;
   --skill-edge-size: 0.5em;
 
   min-width: 40px;
 
-  color: var(--skill-border-color);
+  color: var(--color-text-accent);
   font-family: var(--font-heading);
   font-size: 20px;
   letter-spacing: 4px;
