@@ -1,4 +1,14 @@
 :host {
+  padding: 40px 0 40px 0;
+  background: radial-gradient(
+    circle,
+    var(--color-border) 0%,
+    rgb(103, 118, 120) 50%,
+    var(--color-border) 90%
+  );
+}
+
+.root {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11,8 +21,8 @@
 .services-container {
   display: flex;
   gap: 23px;
-  background-color: var(--color-primary-hover);
-  padding: 20px 44px;
+  padding-bottom: 20px;
+  justify-content: space-between;
 }
 
 .service-title {

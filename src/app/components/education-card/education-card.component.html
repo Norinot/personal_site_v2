@@ -1,0 +1,38 @@
+<div class="education-card">
+  <app-typography font="heading" [size]="8" letterSpacing="6px" colour="accent">
+    {{ educationItem?.title }}</app-typography
+  >
+  <app-typography font="body" [size]="6" letterSpacing="4px" colour="primary">
+    {{ educationItem?.schoolName }}
+  </app-typography>
+
+  <div>
+    <div class="duration-and-speciality">
+      <app-typography font="mono" [size]="4" letterSpacing="4px" colour="blue">
+        {{ educationItem?.timePeriod }}
+      </app-typography>
+      <app-typography font="mono" [size]="4" letterSpacing="4px" colour="blue">
+        {{ educationItem?.cityAndCountry }}
+      </app-typography>
+    </div>
+    <div>
+      <app-typography font="mono" [size]="4" letterSpacing="4px" colour="blue"
+        >Competencies:
+      </app-typography>
+
+      <div class="competency-wrapper">
+        @for (item of educationItem?.competencies; track $index) {
+        <app-typography
+          class="competency-item"
+          font="mono"
+          [size]="4"
+          letterSpacing="4px"
+          colour="secondary"
+        >
+          {{ item }}
+        </app-typography>
+        }
+      </div>
+    </div>
+  </div>
+</div>

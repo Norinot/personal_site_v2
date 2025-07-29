@@ -1,67 +1,74 @@
-<app-typography
-  class="skills-title"
-  customClass="fancyFont"
-  letterSpacing="14px"
-  [size]="10"
-  colour="accent"
-  font="heading"
-  >SKILLS</app-typography
->
-<div class="container">
-  <div>
-    <div class="tooltip-wrapper">
-      <app-button
-        class="expert-tooltip"
-        width="222px"
-        height="60px"
-        variant="fancy"
-        (mouseleave)="unFocusElements()"
-        (mouseenter)="focusElements('expert')"
-        borderColor="var(--color-error)"
-        textColor="var(--color-error)"
-        backgroundColor="var(--color-bg-secondary)"
-        font="vt323"
-        fontSize="32px"
-      >
-        Expert
-      </app-button>
-      <app-button
-        class="high-tooltip"
-        width="222px"
-        height="60px"
-        variant="fancy"
-        (mouseleave)="unFocusElements()"
-        (mouseenter)="focusElements('high')"
-        borderColor="var(--color-warning)"
-        textColor="var(--color-warning)"
-        backgroundColor="var(--color-bg-secondary)"
-        font="vt323"
-        fontSize="32px"
-      >
-        Advanced
-      </app-button>
-      <app-button
-        class="medium-tooltip"
-        width="222px"
-        height="60px"
-        variant="fancy"
-        (mouseleave)="unFocusElements()"
-        (mouseenter)="focusElements('medium')"
-        borderColor="var(--color-success)"
-        textColor="var(--color-success)"
-        backgroundColor="var(--color-bg-secondary)"
-        font="vt323"
-        fontSize="32px"
-      >
-        Intermediate
-      </app-button>
+<div class="root">
+  <app-typography
+    class="skills-title"
+    customClass="fancyFont"
+    letterSpacing="14px"
+    [size]="10"
+    colour="accent"
+    font="heading"
+    >SKILLS</app-typography
+  >
+  <div class="container">
+    <div>
+      <div class="tooltip-wrapper">
+        <app-button
+          class="expert-tooltip"
+          width="222px"
+          height="60px"
+          variant="fancy"
+          (mouseleave)="unFocusElements()"
+          (mouseenter)="focusElements('expert')"
+          borderColor="var(--color-error)"
+          textColor="var(--color-error)"
+          backgroundColor="var(--color-bg-secondary)"
+          font="vt323"
+          fontSize="32px"
+        >
+          Expert
+        </app-button>
+        <app-button
+          class="high-tooltip"
+          width="222px"
+          height="60px"
+          variant="fancy"
+          (mouseleave)="unFocusElements()"
+          (mouseenter)="focusElements('high')"
+          borderColor="var(--color-warning)"
+          textColor="var(--color-warning)"
+          backgroundColor="var(--color-bg-secondary)"
+          font="vt323"
+          fontSize="32px"
+        >
+          Advanced
+        </app-button>
+        <app-button
+          class="medium-tooltip"
+          width="222px"
+          height="60px"
+          variant="fancy"
+          (mouseleave)="unFocusElements()"
+          (mouseenter)="focusElements('medium')"
+          borderColor="var(--color-success)"
+          textColor="var(--color-success)"
+          backgroundColor="var(--color-bg-secondary)"
+          font="vt323"
+          fontSize="32px"
+        >
+          Intermediate
+        </app-button>
+      </div>
     </div>
-  </div>
-  <div class="skills-container">
-    @for (item of skills; track $index) {
-    <div class="icon-wrapper" [class]="item.level" [ngClass]="getClass(item)">
-      <app-icon [name]="item.icon" size="130px"></app-icon>
+    <div class="skills-container">
+      @for (item of skills; track $index) {
+      <div
+        [appTooltip]="item.icon"
+        class="icon-wrapper"
+        [class]="item.level"
+        [ngClass]="getClass(item)"
+      >
+        <app-icon [name]="item.icon" size="130px"></app-icon>
+      </div>
+      }
     </div>
-    }
   </div>
 </div>

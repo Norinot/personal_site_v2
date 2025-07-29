@@ -1,6 +1,4 @@
 header {
-  --border-width: 0.25em;
-
   margin: auto;
   position: relative; /* Key property as mentioned */
   isolation: isolate; /* For z-index scoping */
@@ -10,17 +8,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
   height: 60px;
+  max-width: 1620px;
 
   clip-path: polygon(
-    50% 0%,
+    0% 0%,
     100% 0%,
-    101% -9%,
-    92.5% 100%,
-    7.5% 100%,
-    -0.5% -2%,
-    0 0
+    calc(100% - var(--slant-inset)) 100%,
+    var(--slant-inset) 100%
   );
 
   margin-bottom: 2rem;
@@ -41,12 +36,13 @@ header::after {
   background: var(--color-bg-secondary);
   z-index: -1;
 
+  --slant-inset: 6rem;
+
   clip-path: polygon(
-    calc(50% + var(--border-width) * 0.5) var(--border-width),
-    calc(99.5% - var(--border-width)) var(--border-width),
-    calc(92.5% - var(--border-width) * 0.5) calc(100% - var(--border-width)),
-    calc(7.5% + var(--border-width) * 0.5) calc(100% - var(--border-width)),
-    calc(0.5% + var(--border-width)) var(--border-width)
+    0% 0%,
+    100% 0%,
+    calc(100% - var(--slant-inset)) 100%,
+    var(--slant-inset) 100%
   );
 }
 
@@ -63,6 +59,7 @@ app-button:hover {
 .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 120px;
+  justify-content: space-between;
+  margin: 0 150px 0 150px;
+  width: 100%;
 }

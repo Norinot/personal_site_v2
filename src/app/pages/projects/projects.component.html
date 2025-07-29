@@ -1,15 +1,17 @@
-<app-typography
-  class="project-title"
-  customClass="fancyFont"
-  letterSpacing="14px"
-  colour="accent"
-  [size]="10"
-  font="heading"
-  >PROJECTS</app-typography
->
+<div class="root">
+  <app-typography
+    class="project-title"
+    customClass="fancyFont"
+    letterSpacing="14px"
+    colour="accent"
+    [size]="10"
+    font="heading"
+    >PROJECTS</app-typography
+  >
 
-<div class="projects-wrapper">
-  @for (item of projects; track $index) {
-  <app-project-card [project]="item"></app-project-card>
-  }
+  <div class="projects-wrapper">
+    @for (item of projects; track $index) {
+    <app-project-card [project]="item"></app-project-card>
+    }
+  </div>
 </div>

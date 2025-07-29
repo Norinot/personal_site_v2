@@ -45,3 +45,11 @@ export interface IServices {
   color: BaseTypographyColors;
   iconColor: string;
 }
+
+export interface EducationItem {
+  title: string;
+  schoolName: string;
+  timePeriod: string;
+  cityAndCountry: string;
+  competencies: string[];
+}

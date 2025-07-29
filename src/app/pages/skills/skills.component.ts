@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TypographyComponent } from '../../components/typography/typography.component';
 import { IconComponent } from '../../components/icon/icon.component';
 import { ButtonComponent } from '../../components/button/button.component';
+import { TooltipDirective } from '../../directives/tooltip.directive';
 
 type Icon =
   | 'angular'
@@ -25,7 +26,13 @@ interface ISkillDetails {
 }
 @Component({
   selector: 'app-skills',
-  imports: [IconComponent, TypographyComponent, CommonModule, ButtonComponent],
+  imports: [
+    IconComponent,
+    TypographyComponent,
+    CommonModule,
+    ButtonComponent,
+    TooltipDirective,
+  ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })

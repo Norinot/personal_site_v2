@@ -1,38 +1,40 @@
-<app-typography
-  class="title"
-  font="heading"
-  [size]="10"
-  letterSpacing="14px"
-  customClass="fancyFont"
-  colour="accent"
-  >SERVICES</app-typography
->
-<div class="services-container">
-  @for (service of services; track service.title) {
-  <div class="service-card">
-    <app-typography
-      [size]="8"
-      font="heading"
-      [colour]="service.color"
-      class="service-title"
-    >
-      {{ service.title }}
-    </app-typography>
+<div class="root">
+  <app-typography
+    class="title"
+    font="heading"
+    [size]="10"
+    letterSpacing="14px"
+    customClass="fancyFont"
+    colour="accent"
+    >SERVICES</app-typography
+  >
+  <div class="services-container">
+    @for (service of services; track service.title) {
+    <div class="service-card">
+      <app-typography
+        [size]="8"
+        font="heading"
+        [colour]="service.color"
+        class="service-title"
+      >
+        {{ service.title }}
+      </app-typography>
 
-    <app-typography
-      class="description"
-      [size]="2"
-      font="mono"
-      colour="secondary"
-    >
-      {{ service.description }}
-    </app-typography>
+      <app-typography
+        class="description"
+        [size]="3"
+        font="mono"
+        colour="secondary"
+      >
+        {{ service.description }}
+      </app-typography>
 
-    <app-icon
-      size="32px"
-      [name]="service.iconRef"
-      [color]="'var(' + service.iconColor + ')'"
-    ></app-icon>
+      <app-icon
+        size="32px"
+        [name]="service.iconRef"
+        [color]="'var(' + service.iconColor + ')'"
+      ></app-icon>
+    </div>
+    }
   </div>
-  }
 </div>
