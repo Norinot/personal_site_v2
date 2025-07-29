@@ -37,7 +37,7 @@ export class NavigationComponent {
   scrollTo(id: string) {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80;
+      const yOffset = -160;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({ top: y, behavior: 'smooth' });
