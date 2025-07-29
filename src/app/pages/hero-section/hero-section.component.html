@@ -1,4 +1,4 @@
-<div class="root">
+<div class="root" [attr.id]="SECTION_IDS.HERO">
   <app-typography
     class="title"
     font="heading"
@@ -41,8 +41,20 @@
         team delivering custom-built software solutions.
       </app-typography>
       <div class="icon-container">
-        <app-icon [name]="'github'" size="24px"></app-icon>
-        <app-icon [name]="'linkedIn'" size="24px"></app-icon>
+        <app-icon
+          class="icon"
+          (click)="openExternalLink('https://github.com/Norinot/')"
+          [name]="'github'"
+          size="24px"
+        ></app-icon>
+        <app-icon
+          class="icon"
+          (click)="
+            openExternalLink('https://www.linkedin.com/in/bernath-mark-bence/')
+          "
+          [name]="'linkedIn'"
+          size="24px"
+        ></app-icon>
       </div>
     </div>
   </div>
@@ -58,6 +70,7 @@
       >CONTACT ME
     </app-button>
     <app-button
+      (click)="scrollTo(SECTION_IDS.PROJECTS)"
       width="224px"
       height="60px"
       variant="fancy"

@@ -7,3 +7,19 @@
     width: 100%;
   }
 }
+
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.spacer {
+  height: 160px;
+}

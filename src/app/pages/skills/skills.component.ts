@@ -4,6 +4,7 @@ import { TypographyComponent } from '../../components/typography/typography.comp
 import { IconComponent } from '../../components/icon/icon.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { TooltipDirective } from '../../directives/tooltip.directive';
+import { SECTION_IDS } from '../../utils/utilityVariables';
 
 type Icon =
   | 'angular'
@@ -37,6 +38,7 @@ interface ISkillDetails {
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  SECTION_IDS = SECTION_IDS;
   currentFocus: CompetenceLevel | undefined;
 
   skills: ISkillDetails[] = [

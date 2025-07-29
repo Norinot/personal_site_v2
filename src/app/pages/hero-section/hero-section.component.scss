@@ -93,8 +93,8 @@
   color: var(--color-text-accent);
 }
 
-.telekomHighlight{
-  color: #E20074;
+.telekomHighlight {
+  color: #e20074;
 }
 .italicText {
   font-style: italic;
@@ -108,4 +108,13 @@
   display: flex;
   align-self: flex-end;
   gap: 14px;
+}
+
+.icon {
+  transition: filter 0.2s ease-in-out;
+  cursor: pointer;
+}
+.icon:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: filter 0.2s ease-in-out;
 }

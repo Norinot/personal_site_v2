@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
 import { TypographyComponent } from '../../components/typography/typography.component';
+import { SECTION_IDS } from '../../utils/utilityVariables';
 
 interface INavItem {
   title: string;
@@ -17,31 +18,29 @@ interface INavItem {
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
+  SECTION_IDS = SECTION_IDS;
+
   navItems: INavItem[] = [
-    {
-      navigateTo: '#',
-      title: 'About me',
-    },
-    {
-      navigateTo: '#',
-      title: 'Projects',
-    },
-    {
-      navigateTo: '#',
-      title: 'Services',
-    },
-    {
-      navigateTo: '#',
-      title: 'Education',
-    },
-    {
-      navigateTo: '#',
-      title: 'Hobbies',
-    },
+    { navigateTo: SECTION_IDS.HERO, title: 'About me' },
+    { navigateTo: SECTION_IDS.SKILLS, title: 'Skills' },
+    { navigateTo: SECTION_IDS.PROJECTS, title: 'Projects' },
+    { navigateTo: SECTION_IDS.SERVICES, title: 'Services' },
+    { navigateTo: SECTION_IDS.EDUCATION, title: 'Education' },
+    { navigateTo: SECTION_IDS.HOBBIES, title: 'Hobbies' },
   ];
 
   contactItem: INavItem = {
-    navigateTo: '#',
+    navigateTo: SECTION_IDS.CONTACT,
     title: 'Contact Me',
   };
+
+  scrollTo(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TypographyComponent } from '../../components/typography/typography.component';
 import { EducationCardComponent } from '../../components/education-card/education-card.component';
 import { EducationItem } from '../../types';
+import { SECTION_IDS } from '../../utils/utilityVariables';
 
 @Component({
   selector: 'app-education',
@@ -10,6 +11,8 @@ import { EducationItem } from '../../types';
   styleUrl: './education.component.scss',
 })
 export class EducationComponent {
+  SECTION_IDS = SECTION_IDS;
+  
   education: EducationItem[] = [
     {
       cityAndCountry: 'Miskolc, Hungary',

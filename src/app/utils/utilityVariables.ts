@@ -133,3 +133,13 @@ export const g_services: IServices[] = [
     iconColor: '--color-warning',
   },
 ];
+
+export const SECTION_IDS = {
+  HERO: 'hero-section',
+  SKILLS: 'skills',
+  PROJECTS: 'projects',
+  SERVICES: 'services',
+  EDUCATION: 'education',
+  HOBBIES: 'hobbies',
+  CONTACT: 'contact',
+} as const;

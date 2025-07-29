@@ -3,7 +3,7 @@
     <div class="nav-firsthalf">
       @for (item of navItems; track item.title) {
       <nav>
-        <app-button [routerLink]="item.navigateTo">
+        <app-button (click)="scrollTo(item.navigateTo)">
           <app-typography [size]="6" [font]="'mono'" [weight]="'bold'">
             {{ item.title }}
           </app-typography>
@@ -12,8 +12,13 @@
       }
     </div>
     <nav>
-      <app-button [routerLink]="contactItem.navigateTo">
-        <app-typography [size]="6" [font]="'mono'" [weight]="'bold'" colour="accent">
+      <app-button (click)="scrollTo(contactItem.navigateTo)">
+        <app-typography
+          [size]="6"
+          [font]="'mono'"
+          [weight]="'bold'"
+          colour="accent"
+        >
           {{ contactItem.title }}
         </app-typography>
       </app-button>
